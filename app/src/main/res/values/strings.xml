@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">TestowaAplikacja</string>
     <string name="startbutton_szukanie_pracy">Szukanie pracy</string>
+    <string name="startbutton_retrofit">Test retrofit</string>
+    <string name="enter_anything">Enter anything!</string>
+    <string name="hello">Hello!</string>
+    <string name="title_activity_retrofit">RetrofitActivity</string>
 </resources>

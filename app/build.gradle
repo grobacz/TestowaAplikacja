@@ -11,6 +11,8 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -23,15 +25,28 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.0'
-
-
     apt 'com.google.dagger:dagger-compiler:2.2'
-    compile 'com.google.dagger:dagger:2.2'
     provided 'javax.annotation:jsr250-api:1.0'
-
-
+    androidTestCompile('com.android.support.test:runner:0.5') {
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile('com.android.support.test:rules:0.5') {
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2') {
+        exclude module: 'support-annotations'
+    }
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.google.dagger:dagger:2.2'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.survivingwithandroid:weatherlib_okhttpclient:1.6.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'org.mockito:mockito-core:2.1.0-RC.1'
+    compile 'junit:junit:4.12'
+    compile 'com.android.support:design:24.2.0'
+
+    testCompile "org.robolectric:robolectric:3.1.2"
+
 }

@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import javax.inject.Inject;
 
+import pl.grobacz.example.testowaaplikacja.retrofit.RetrofitActivity;
 import pl.grobacz.example.testowaaplikacja.szukaniepracy.SzukaniePracyActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
 
     private Button szukaniePracyStartButton;
+    private Button retrofitStartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SzukaniePracyActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        retrofitStartButton = (Button)findViewById(R.id.retrofitStartButton);
+        retrofitStartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RetrofitActivity.class);
                 startActivity(intent);
                 finish();
             }
